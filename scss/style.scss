@@ -1,0 +1,17 @@
+@import 'bootstrap/bootstrap';
+
+
+/* ---- reset ---- */
+@font-face {
+    font-family: 'Disha';
+    src: url('fonts/Futura PT Light.otf');
+}
+
+html{ height: 100% }
+body {
+  margin: 0;
+  font: normal 75% Arial, Helvetica, sans-serif;
+  min-height: 100%;
+  font-family: 'Disha';
+  font-size: 20px;
+}
