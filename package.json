@@ -9,6 +9,7 @@
   "author": "Ankit",
   "license": "ISC",
   "devDependencies": {
+    "browser-sync": "^2.18.13",
     "gulp": "^3.9.0",
     "gulp-header": "^1.7.1",
     "gulp-plumber": "^1.0.1",

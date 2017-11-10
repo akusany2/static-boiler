@@ -9,7 +9,8 @@
 	cssConcat 	 = require('gulp-concat-css');
 
 	var uglify 	 = require('gulp-uglify'),
-	concat 			 = require('gulp-concat');
+		concat = require('gulp-concat'),
+		browserSync = require('browser-sync').create();
 
 var sassFiles = 'scss/*.scss';
 var jsFiles   = 'lib/*.js';
@@ -55,7 +56,18 @@ gulp.task('jsconcat', function(){
 });
 
 
-gulp.task('watch', function(){
+gulp.task('watch', function () {
+	browserSync.init({
+		injectChanges: true,
+		server: {
+			baseDir: "./"
+		},
+		port: 8000,
+		ui: {
+			port: 8001
+		}
+	});
+	gulp.watch("*.html").on("change", browserSync.reload);
 	gulp.watch(sassFiles, ['sass']);
 	gulp.watch(jsFiles, ['js']);
 	gulp.watch(jsDir, ['jsconcat']);
